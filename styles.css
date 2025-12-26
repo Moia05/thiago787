@@ -1,0 +1,19 @@
+
+:root{
+    --color-gold:rgba(255, 215, 0, 1);
+}
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'poppins',sans-serif;
+    color: #fff;
+    list-style: none;
+    transition: 0.5s;
+}
+
+.algo{
+    background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDB2N2x6c3FrcWYycGxhZnFkZWhuZGQ1ZWtiNXFxeXd4N2RyMmc2cyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/W307DdkjIsRHVWvoFE/giphy.gif');
+    background-size: cover;
+    
+}
