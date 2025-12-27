@@ -1,9 +1,10 @@
-
-:root{
-    --color-gold:rgba(255, 215, 0, 1);
-    --color-Azul:rgba(30, 61, 101, 1);
+:root {
+    --color-gold: rgba(255, 215, 0, 1);
+    --color-Azul: rgba(30, 61, 101, 1);
 }
-*{
+
+/* Reset Geral */
+* {
     margin: 0;
     padding: 0;
     text-decoration: none;
@@ -11,64 +12,68 @@
     color: #eaffff;
     list-style: none;
     transition: 0.5s;
+    box-sizing: border-box; /* Garante que padding não aumente o tamanho dos elementos */
 }
 
-body{
-    /*background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDB2N2x6c3FrcWYycGxhZnFkZWhuZGQ1ZWtiNXFxeXd4N2RyMmc2cyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/W307DdkjIsRHVWvoFE/giphy.gif');*/
-    background-image: image-set("/media/background.png");
+body {
+    /* Ajuste do Background: 'fixed' faz a imagem não rolar com o texto */
+    background-image: url("media/background.png"); 
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    background-repeat: no-repeat;
     text-shadow: 0 0 1px #000000;
-    
+    min-height: 100vh; /* Garante que o corpo tenha no mínimo a altura da tela */
 }
 
-.shadow{
+/* Filtro Azul que cobre todo o site */
+.shadow {
     width: 100%;
-    height: 100%;
-    background-color: rgba(37, 35, 148, 0.4);
-
+    min-height: 100vh; /* Faz o filtro acompanhar todo o conteúdo, mesmo no scroll */
+    background-color: rgba(37, 35, 148, 0.4); /* Azul com transparência */
+    padding-bottom: 50px; /* Espaço no final para não colar no rodapé */
 }
 
+/* Layout das seções */
 .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
-    border-radius: 12px;
-    
+    padding: 20px; /* Espaçamento interno para não colar nas bordas */
 }
 
+/* Foto redonda do Thiago */
 #avatar {
-    width: 250px;       /* Largura da foto */
-    height: 250px;      /* Altura deve ser igual à largura */
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
-    object-fit: cover;  /* Garante que a foto não fique esticada */
+    object-fit: cover;
     border: 3px solid #ede7ea;
-    margin: 20px 100px 10px 0;
+    margin-right: 100px;
 }
 
 #parabens {
     font-weight: bold;
     text-align: center;
-    margin-top: 20px;
     margin-left: 50px;
 }
 
-.card{
+/* Caixas de texto */
+.card {
     width: 400px;
-    height: 400px;
+    min-height: 400px;
     font-weight: bold;
     font-size: 1.5rem;
-    border-radius: 5px;
-    object-fit: cover;
-    margin: 20px 100px;
-    padding: 50px 0 0 0;
+    padding: 20px;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.foto{
+/* Estilo geral para fotos e vídeos das seções */
+.foto {
     width: 400px;
     height: 500px;
     border-radius: 5px;
@@ -78,59 +83,106 @@ body{
     margin: 20px 60px;
 }
 
-.a{
-    background-image: url("/media/lorenzo.png");
+/* Div específica para o desenho que não enquadrava */
+.a {
+    background-image: url("media/lorenzo.png");
     background-size: cover;
     background-position: 50% 20%;
 }
 
+/* Retângulo roxo separador */
 .divisor {
     width: 100%;
-    height: 10px;               /* O seu retângulo horizontal */
-    background-color: rgb(105, 58, 161); /* Cor bem forte para teste */
+    height: 10px;
+    background-color: rgb(105, 58, 161);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0px 0px 10px 0px;
+    margin-bottom: 10px;
 }
 
+/* Aviãozinho no divisor */
 .logo-divisor {
-    height: 100px;               /* Altura da logo */
-    width: auto;                /* Ajusta a largura proporcionalmente */
+    height: 80px; /* Ajustado para não sumir */
+    width: auto;
     display: block;
-    object-fit: contain;        /* Garante que a logo não fique esticada */
-    padding-top: 3px;
+    object-fit: contain;
 }
 
-#aviao-feliz{
+#aviao-feliz {
     width: 500px;
     height: 300px;
 }
-.cor{
+
+/* Classe para forçar cor específica em textos */
+.cor {
     color: #1e3d65 !important;
 }
-.banner{
+
+.banner {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 50px;
 }
-.desenho{
-    display: flex;
-    justify-content: center;
+
+/* Desenho do Thiago via CSS */
+.desenho {
     width: 500px;
     height: 400px;
     border: 1px solid #ede7ea;
-    background-image: url("/media/thiagasniver.png");
+    background-image: url("media/thiagasniver.png");
     background-size: cover;
+    background-position: center;
     margin-top: 30px;
 }
-h1{
-    margin-top: 20px;
+
+h1 {
     font-size: 2.5rem;
     font-weight: bold;
     color: #EAFFFF;
 }
-#saudacao{
-    margin-bottom: 40px;
+.frase{
+    color: #413160;
+}
+
+/* Mural de Mensagens - O "pai" agora fica invisível, servindo apenas para organizar */
+.mensagens-container {
+    display: flex;             /* Usamos flex para empilhar as caixinhas */
+    flex-direction: column;    /* Uma embaixo da outra */
+    align-items: center;       /* Centraliza as caixinhas na tela */
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: transparent; /* Removemos o fundo do container pai */
+    padding: 10px;
+}
+
+/* A "Caixinha" de cada mensagem individual */
+.mensagem {
+    background-color: var(--color-Azul); /* O fundo azul agora fica na caixa da mensagem */
+    margin-bottom: 25px;       /* Espaço entre uma caixinha e outra */
+    line-height: 1.7;          /* Melhora a leitura de textos longos */
+    padding: 25px;             /* Espaço interno para o texto não encostar na borda */
+    border-radius: 15px;       /* Deixa os cantos arredondados */
+    width: 100%;               /* Faz a caixinha ocupar todo o espaço do container pai */
+    
+    /* Efeito de profundidade para parecer que a caixa está "flutuando" */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); 
+    
+    /* Uma bordinha sutil no topo para dar um brilho */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* Garante que o texto fique bem visível */
+    color: #eaffff;
+    text-align: left;          /* Alinhamento à esquerda para cartas fica mais natural */
+    white-space: pre-line;     /* Respeita as quebras de linha que você deu no HTML */
+}
+
+/* Opcional: Se quiser que o nome de quem enviou (como -Leo ou -Didi) fique destacado */
+.mensagem strong {
+    color: var(--color-gold);
+    display: block;
+    margin-top: 10px;
 }
