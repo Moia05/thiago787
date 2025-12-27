@@ -52,6 +52,10 @@ body {
     border: 3px solid #ede7ea;
     margin-right: 100px;
 }
+.forte{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
 
 #parabens {
     font-weight: bold;
@@ -138,7 +142,7 @@ body {
     margin-top: 30px;
 }
 
-h1 {
+h1{
     font-size: 2.5rem;
     font-weight: bold;
     color: #EAFFFF;
